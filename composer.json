@@ -1,9 +1,9 @@
 {
-    "name": "westie/outragelib-objectlist",
+    "name": "outragelib/objectlist",
     "type": "library",
     "description": "OUTRAGElib object list",
     
-    "version": "1.0.0",
+    "version": "1.0.1",
  	
     "authors": [
         {
