@@ -5,7 +5,7 @@
  */
 
 
-namespace OUTRAGElib\Structure\ObjectList;
+namespace OUTRAGElib\Structure;
 
 use \ArrayAccess;
 use \Serializable;
@@ -24,7 +24,7 @@ class ObjectList implements ArrayAccess, ObjectListInterface, Serializable
 	 */
 	public function offsetExists($property)
 	{
-		return isset($this->list[$property]);
+		return array_key_exists($property, $this->list);
 	}
 	
 	
@@ -35,7 +35,7 @@ class ObjectList implements ArrayAccess, ObjectListInterface, Serializable
 	{
 		$null = null;
 		
-		if(isset($this->list[$property]))
+		if(array_key_exists($property, $this->list))
 			return $this->list[$property];
 		
 		return $null;
@@ -267,5 +267,26 @@ class ObjectList implements ArrayAccess, ObjectListInterface, Serializable
 	{
 		$this->list = [];
 		return $this;
+	}
+	
+	
+	/**
+	 *	ContainerInterface: does a property exist?
+	 */
+	public function has($property)
+	{
+		return array_key_exists($property, $this->list);
+	}
+	
+	
+	/**
+	 *	ContainerInterface: retrieve a property if it does exist
+	 */
+	public function get($property)
+	{
+		if(!array_key_exists($property, $this->list))
+			throw new NotFoundException("Invalid property '".$property."'");
+		
+		return $this->list[$property];
 	}
 }

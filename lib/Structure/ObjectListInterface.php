@@ -5,12 +5,13 @@
  */
 
 
-namespace OUTRAGElib\Structure\ObjectList;
+namespace OUTRAGElib\Structure;
 
 use \Countable;
 use \Iterator;
+use \Psr\Container\ContainerInterface;
 
-interface ObjectListInterface extends Countable, Iterator
+interface ObjectListInterface extends Countable, Iterator, ContainerInterface
 {
 	/**
 	 *	Returns the first index of this list
