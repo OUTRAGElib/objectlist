@@ -1,14 +1,11 @@
 <?php
-/**
- *	The list interface details a common set of functions that one should stick
- *	to when making something to do with a list of objects or something
- */
 
 
 namespace OUTRAGElib\Structure;
 
 use \ArrayAccess;
 use \Serializable;
+
 
 class ObjectList implements ArrayAccess, ObjectListInterface, Serializable
 {

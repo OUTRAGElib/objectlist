@@ -1,8 +1,4 @@
 <?php
-/**
- *	The list interface details a common set of functions that one should stick
- *	to when making something to do with a list of objects or something
- */
 
 
 namespace OUTRAGElib\Structure;
@@ -10,6 +6,7 @@ namespace OUTRAGElib\Structure;
 use \Countable;
 use \Iterator;
 use \Psr\Container\ContainerInterface;
+
 
 interface ObjectListInterface extends Countable, Iterator, ContainerInterface
 {
