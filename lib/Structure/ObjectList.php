@@ -110,7 +110,7 @@ class ObjectList implements ArrayAccess, ObjectListInterface, Serializable
 	 */
 	public function valid()
 	{
-		return current($this->list);
+		return key($this->list) !== null;
 	}
 	
 	
