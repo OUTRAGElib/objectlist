@@ -49,4 +49,18 @@ trait ObjectListPopulationTrait
 		
 		return $this;
 	}
+	
+	
+	/**
+	 *	Populate this object with a reference
+	 */
+	public final function populateWithReference(array &$input)
+	{
+		if($this instanceof ObjectList == false)
+			throw new Exception("Cannot set list to reference on non-supported object types");
+		
+		$this->list = &$input;
+		
+		return $this;
+	}
 }
