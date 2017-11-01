@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OUTRAGElib\\": "./lib"
+            "OUTRAGElib\\Structure\\": "./lib"
         }
     },
     "require-dev": {
